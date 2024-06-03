@@ -17,3 +17,10 @@ class NRCCDataProcessor(SRCCDataProcessor):
         k1 = BEST_CALC_DICT[self.METHOD][s][0] or "None"
         k1 = s + "@" + k1
         return Settings(self.polar[k1])
+
+    def find_best_error(self):
+        """See ```SRCCDataProcessor.find_best```."""
+        s = self.symbol
+        k1 = BEST_CALC_DICT[self.METHOD][s][0] or "None"
+        k1 = s + "@" + k1
+        return Settings(self.polar_error[k1])

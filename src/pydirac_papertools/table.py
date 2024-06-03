@@ -208,14 +208,13 @@ class Tabulator:
         )
         return self._table
 
-    def to_latex(
+    def to_dataframe(
         self,
         add_ref=True,
         add_extra_states=True,
         add_derived_prop=True,
-        longtable=False,
     ):
-        """Generate latex string."""
+        """Generate DataFrame."""
         table = self.table
         group = self.group
 
@@ -312,6 +311,29 @@ class Tabulator:
         if add_derived_prop:
             # add derived properties
             df_prop = table.loc[[calc_section_key]]
+        else:
+            df_prop = pd.DataFrame()
+        df_tot = pd.concat([df_calc, df_ref, df_prop])
+        df_tot.drop_duplicates(inplace=True)
+        return df_tot
+
+    def to_latex(
+        self,
+        add_ref=True,
+        add_extra_states=True,
+        add_derived_prop=True,
+        longtable=False,
+        dataframe=None,
+    ):
+        """Generate latex string."""
+        if dataframe is None:
+            df_tot = self.to_dataframe(add_ref, add_extra_states, add_derived_prop)
+        else:
+            df_tot = dataframe
+        group = self.group
+
+        if add_derived_prop:
+            # add derived properties
             caption = (
                 r"Static dipole polarizabilities with non-relativistic (NR), "
                 r"scalar-relativistic (SR), full Dirac-Coulomb (DC) relativistic effects "
@@ -319,14 +341,11 @@ class Tabulator:
                 r"that are defined in Sec. \ref{{sec:deriv_value}}".format(self.group)
             )
         else:
-            df_prop = pd.DataFrame()
             caption = (
                 r"Static dipole polarizabilities with non-relativistic (NR), "
                 r"scalar-relativistic (SR), full Dirac-Coulomb (DC) relativistic effects "
                 r"of Group {} elements.".format(self.group)
             )
-        df_tot = pd.concat([df_calc, df_ref, df_prop])
-        df_tot.drop_duplicates(inplace=True)
 
         label = rf"tab:dipole_group_{self.group}"
         tex = df_tot.to_latex(
@@ -345,8 +364,9 @@ class Tabulator:
                 tex = tex.replace("NR-SR", r"SR$_n$")
                 tex = tex.replace("DC-SR", r"SR$_d$")
 
-            if group in [17]:
-                tex = tex.replace(r"\begin{tabular}", r"\scriptsize \begin{tabular}")
-            else:
-                tex = tex.replace(r"\begin{tabular}", r"\footnotesize \begin{tabular}")
+            tex = tex.replace(r"\begin{tabular}", r"\scriptsize \begin{tabular}")
+            # if group in [17]:
+            #     tex = tex.replace(r"\begin{tabular}", r"\scriptsize \begin{tabular}")
+            # else:
+            #     tex = tex.replace(r"\begin{tabular}", r"\footnotesize \begin{tabular}")
         return tex

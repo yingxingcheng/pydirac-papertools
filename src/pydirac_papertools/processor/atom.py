@@ -85,9 +85,24 @@ class AtomDataProcessor(AtomAbstractDataProcessor):
                 result[k] = getattr(self, k).find_best()
         return result
 
-    def analysis(self):
+    def find_best_error(self):
+        """See ```AtomAbstractDataProcessor.find_best_error```."""
+        result = Settings()
+        for k in self.OPTION_KEYS_FOR_SAVE:
+            dp = getattr(self, k)
+            if dp:
+                result[k] = getattr(self, k).find_best_error()
+        return result
+
+    def analysis(self, data_type="polar"):
         """Relativistic effects analysis."""
-        best_res = self.find_best()
+        if data_type == "polar":
+            best_res = self.find_best()
+        elif data_type == "polar_error":
+            best_res = self.find_best_error()
+        else:
+            raise RuntimeError(f"Unknown data_type: {data_type}")
+
         gs_nr = best_res["nrcc"]
         gs_for_nr, gs_for_so = best_res["srcc"]
         gs_cc_so = best_res["dccc"]

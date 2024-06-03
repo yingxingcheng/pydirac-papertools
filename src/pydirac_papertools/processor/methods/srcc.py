@@ -190,6 +190,15 @@ class SRCCDataProcessor(AtomAbstractDataProcessor):
         k2 = s + "@" + k2
         return Settings(self.polar[k1]), Settings(self.polar[k2])
 
+    def find_best_error(self):
+        """See ```AbstractDataProcessor.find_best_error```."""
+        s = self.symbol
+        k1 = BEST_CALC_DICT[self.METHOD][s][0] or "None"
+        k2 = BEST_CALC_DICT[self.METHOD][s][1] or "None"
+        k1 = s + "@" + k1
+        k2 = s + "@" + k2
+        return Settings(self.polar_error[k1]), Settings(self.polar_error[k2])
+
     def to_dataframe_energy(self):
         """See ```AbstractDataProcessor.to_dataframe```."""
         energy = self.energy

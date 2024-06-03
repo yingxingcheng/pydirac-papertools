@@ -47,8 +47,8 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
             errors = polar_error[k]
             gs = self.get_gs(v, precision)
             scf = self.get_scf(v, precision)
-            gs_error = self.get_gs_error(errors, precision)
-            scf_error = self.get_scf_error(errors, precision)
+            gs_error = self.get_gs_error(errors, precision, return_tex=True)
+            scf_error = self.get_scf_error(errors, precision, return_tex=True)
             if gp in [1, 2, 11, 12, 18]:
                 pe_scf = (scf - gs) / gs * 100
                 param_dict = {"gs": gs, "calc_type": ct, "scf": scf, "pe_scf": pe_scf}
@@ -84,9 +84,12 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
             scf = round(scf, precision)
         return scf
 
-    def get_scf_error(self, entity, precision=None):
+    def get_scf_error(self, entity, precision=None, return_tex=False):
         error = self.get_scf(entity, precision)
-        return get_error_tex(error)
+        if return_tex:
+            return get_error_tex(error)
+        else:
+            return error
 
     def get_gs(self, entity, precision=None):
         """Get ground-state results from a CI entity."""
@@ -118,7 +121,7 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
             gs = round(gs, precision)
         return gs
 
-    def get_gs_error(self, entity, precision=None):
+    def get_gs_error(self, entity, precision=None, return_tex=False):
         """Get ground-state results from a CI entity."""
         pos = 1 if self.is_quad else 0
         scale = 4 if self.is_quad else 1
@@ -149,7 +152,10 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
         gs /= scale
         if precision:
             gs = round(gs, precision)
-        return get_error_tex(gs)
+        if return_tex:
+            return get_error_tex(gs)
+        else:
+            return gs
 
     def get_extra_states(self, entity, precision=None):
         pos = 1 if self.is_quad else 0
@@ -187,7 +193,7 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
             d = {k: round(v, precision) for k, v in d.items()}
         return d
 
-    def get_extra_states_error(self, entity, precision=None):
+    def get_extra_states_error(self, entity, precision=None, return_tex=False):
         pos = 1 if self.is_quad else 0
         scale = 4 if self.is_quad else 1
         gp = self.element.group
@@ -227,7 +233,8 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
         d = {k: v / scale for k, v in d.items()}
         if precision:
             d = {k: round(v, precision) for k, v in d.items()}
-        d = {k: get_error_tex(v) for k, v in d.items()}
+        if return_tex:
+            d = {k: get_error_tex(v) for k, v in d.items()}
         return d
 
     def find_best(self):
@@ -238,6 +245,20 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
             key = symbol + "@" + gs_ct
             gs_res = self.polar[key]
             gs_alpha = self.get_gs(gs_res)
+        else:
+            gs_alpha = np.nan
+            gs_res = Settings()
+        gs_res["gs"] = gs_alpha
+        return gs_res
+
+    def find_best_error(self):
+        """See `AbstractDataProcessor.find_best_error`."""
+        symbol = self.symbol
+        if symbol in BEST_CALC_DICT[self.METHOD] and len(BEST_CALC_DICT[self.METHOD][symbol][0]):
+            gs_ct = BEST_CALC_DICT[self.METHOD][symbol][0]
+            key = symbol + "@" + gs_ct
+            gs_res = self.polar_error[key]
+            gs_alpha = self.get_gs_error(gs_res)
         else:
             gs_alpha = np.nan
             gs_res = Settings()

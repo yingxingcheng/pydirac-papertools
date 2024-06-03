@@ -180,6 +180,10 @@ class AtomAbstractDataProcessor(AbstractDataProcessor):
         """Find the best solution in all calculations."""
         raise NotImplementedError
 
+    def find_best_error(self):
+        """Find the numerical error of the best solution in all calculations."""
+        raise NotImplementedError
+
     def to_dataframe(self, data_type="energy"):
         return getattr(self, f"to_dataframe_{data_type}")()
 

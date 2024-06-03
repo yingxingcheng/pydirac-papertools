@@ -93,6 +93,18 @@ class DCCCDataProcessor(AtomAbstractDataProcessor):
             return Settings()
         # return Settings(self.polar[k1])
 
+    def find_best_error(self):
+        """See ```AbstractDataProcessor.find_best_error```."""
+        s = self.symbol
+        k1 = BEST_CALC_DICT[self.METHOD][s][0]
+        if not k1:
+            return Settings()
+        k1 = s + "@" + k1
+        if k1 in self.polar:
+            return Settings(self.polar_error[k1])
+        else:
+            return Settings()
+
     def to_dataframe_energy(self):
         """See ```AbstractDataProcessor.to_dataframe```."""
         data = self.energy

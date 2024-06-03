@@ -52,7 +52,7 @@ class GroupDataProcessor(AbstractDataProcessor):
         texs = [header_tex] + [tmp_tex] + [footer_tex]
         return "".join(texs)
 
-    def analysis(self):
+    def analysis(self, data_type="polar"):
         k_alpha = [f"alpha_{i}" for i in range(3)]
         k_corr = [f"corr_{i}" for i in range(3)]
         k_delta_orb = [f"delta_orb_{i}" for i in [1, "so", 2]]
@@ -63,7 +63,7 @@ class GroupDataProcessor(AbstractDataProcessor):
 
         results = {k: [] for k in keys}
         for atom in self.OPTION_KEYS_FOR_SAVE:
-            res = getattr(self, atom).analysis()
+            res = getattr(self, atom).analysis(data_type)
             for i, k in enumerate(keys):
                 results[k].append(res[i])
         results["atom_list"] = self.OPTION_KEYS_FOR_SAVE
