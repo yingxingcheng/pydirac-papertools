@@ -31,6 +31,7 @@ dependencies = [
     "matplotlib",
     "pandas",
     "importlib-resources",
+    "pydirac==2024.6.3",
 ]
 
 [project.urls]
@@ -38,7 +39,8 @@ Issues = "https://github.com/yingxingcheng/pydirac-papertools/issues"
 Source = "https://github.com/yingxingcheng/pydirac-papertools/"
 Changelog = "https://github.com/yingxingcheng/pydirac-papertools/blob/main/CHANGELOG.md"
 
-# [project.scripts]
+[project.scripts]
+pt-best-info = "pydirac_papertools.scripts.write_best_solution:main"
 # pypam = "pydirac_papertools.cli.pypam:main"
 
 [tool.ruff]
@@ -59,5 +61,5 @@ line-length = 100
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.setuptools.package-data]
-"paper_helper" = ["data/*.*"]
+"pydirac_papertools.data" = ["data/*.*"]
 # "pydirac.tests" = ["data/**/*.*", "data/**/**/*.*", "data/**/**/**/*.*"]

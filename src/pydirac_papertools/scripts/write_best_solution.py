@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import argparse
 import json
 
 best_dict = {
@@ -327,37 +328,37 @@ best_dict = {
         "Og": ["D-4C-DC-CC@dyall.acv4z@(core 50)[vir 278]"],
     },
     "DC-CI": {
-        "Li": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 3)[vir 209]"],
-        "Na": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 9)[vir 245]"],
-        "K": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 199]"],
-        "Rb": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 231]"],
-        "Cs": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 241]"],
-        "Fr": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 187]"],
-        "Be": ["D-4C-DC-CI@dyall.cv4z@(core 4)[vir 132]"],
-        "Mg": ["D-4C-DC-CI@dyall.cv4z@(core 10)[vir 182]"],
-        "Ca": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 228]"],
-        "Sr": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 214]"],
-        "Ba": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 252]"],
-        "Ra": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 234]"],
-        "Cu": ["D-4C-DC-CI@dyall.cv4z@(core 11)[vir 187]"],
-        "Ag": ["D-4C-DC-CI@dyall.cv4z@(core 11)[vir 223]"],
-        "Au": ["D-4C-DC-CI@dyall.cv4z@(core 11)[vir 241]"],
-        "Zn": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 154]"],
-        "Cd": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 200]"],
-        "Hg": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 240]"],
-        "Cn": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 264]"],
+        # "Li": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 3)[vir 209]"],
+        # "Na": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 9)[vir 245]"],
+        # "K": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 199]"],
+        # "Rb": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 231]"],
+        # "Cs": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 241]"],
+        # "Fr": ["D-4C-DC-CI@s-aug-ANO-RCC@(core 19)[vir 187]"],
+        # "Be": ["D-4C-DC-CI@dyall.cv4z@(core 4)[vir 132]"],
+        # "Mg": ["D-4C-DC-CI@dyall.cv4z@(core 10)[vir 182]"],
+        # "Ca": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 228]"],
+        # "Sr": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 214]"],
+        # "Ba": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 252]"],
+        # "Ra": ["D-4C-DC-CI@dyall.cv4z@(core 20)[vir 234]"],
+        # "Cu": ["D-4C-DC-CI@dyall.cv4z@(core 11)[vir 187]"],
+        # "Ag": ["D-4C-DC-CI@dyall.cv4z@(core 11)[vir 223]"],
+        # "Au": ["D-4C-DC-CI@dyall.cv4z@(core 11)[vir 241]"],
+        # "Zn": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 154]"],
+        # "Cd": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 200]"],
+        # "Hg": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 240]"],
+        # "Cn": ["D-4C-DC-CI@dyall.cv4z@(core 12)[vir 264]"],
         "B": ["D-4C-DC-CI@dyall.acv4z@(core 5)[vir 251]"],
         "Al": ["D-4C-DC-CI@dyall.acv4z@(core 13)[vir 223]"],
         "Ga": ["D-4C-DC-CI@dyall.acv4z@(core 13)[vir 203]"],
         "In": ["D-4C-DC-CI@dyall.acv4z@(core 13)[vir 237]"],
         "Tl": ["D-4C-DC-CI@dyall.acv4z@(core 13)[vir 277]"],
         "Nh": ["D-4C-DC-CI@dyall.acv4z@(core 13)[vir 271]"],
-        "C": ["D-4C-DC-CI@dyall.acv4z@(core 6)[vir 162]"],
-        "Si": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 204]"],
-        "Ge": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 186]"],
-        "Sn": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 230]"],
-        "Pb": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 276]"],
-        "Fl": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 270]"],
+        # "C": ["D-4C-DC-CI@dyall.acv4z@(core 6)[vir 162]"],
+        # "Si": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 204]"],
+        # "Ge": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 186]"],
+        # "Sn": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 230]"],
+        # "Pb": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 276]"],
+        # "Fl": ["D-4C-DC-CI@dyall.acv4z@(core 14)[vir 270]"],
         "N": ["D-4C-DC-CI@dyall.acv4z@(core 7)[vir 159]"],
         "P": ["D-4C-DC-CI@dyall.acv4z@(core 15)[vir 185]"],
         "As": ["D-4C-DC-CI@dyall.acv4z@(core 15)[vir 185]"],
@@ -376,16 +377,31 @@ best_dict = {
         "I": ["D-4C-DC-CI@dyall.acv4z@(core 17)[vir 215]"],
         "At": ["D-4C-DC-CI@dyall.acv4z@(core 17)[vir 261]"],
         "Ts": ["D-4C-DC-CI@dyall.acv4z@(core 17)[vir 247]"],
-        "He": ["D-4C-DC-CI@dyall.acv4z@(core 2)[vir 60]"],
-        "Ne": ["D-4C-DC-CI@dyall.acv4z@(core 10)[vir 108]"],
-        "Ar": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 156]"],
-        "Kr": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 182]"],
-        "Xe": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 214]"],
-        "Rn": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 246]"],
-        "Og": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 246]"],
+        # "He": ["D-4C-DC-CI@dyall.acv4z@(core 2)[vir 60]"],
+        # "Ne": ["D-4C-DC-CI@dyall.acv4z@(core 10)[vir 108]"],
+        # "Ar": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 156]"],
+        # "Kr": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 182]"],
+        # "Xe": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 214]"],
+        # "Rn": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 246]"],
+        # "Og": ["D-4C-DC-CI@dyall.acv4z@(core 18)[vir 246]"],
     },
 }
 
 
-with open("best_solutions.json", "w") as f:
-    json.dump(best_dict, f)
+def main():
+    parser = argparse.ArgumentParser(description="Generate best solution info in a JSON file.")
+    parser.add_argument(
+        "--filename",
+        type=str,
+        default="best_solutions.json",
+        help="Output JSON filename",
+    )
+    parser.add_argument("--indent", type=int, default=2, help="Indentation level for JSON output")
+    args = parser.parse_args()
+
+    with open(args.filename, "w") as f:
+        json.dump(best_dict, f, indent=args.indent)
+
+
+if __name__ == "__main__":
+    main()
