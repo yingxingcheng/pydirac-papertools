@@ -1,2 +1,3 @@
 include examples/*
 include src/pydirac_papertools/data/*.*
+include tests/data/*

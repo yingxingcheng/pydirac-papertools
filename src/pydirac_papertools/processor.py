@@ -1,14 +1,11 @@
 import json
 import os.path
-import pickle
-from collections import OrderedDict
 from pathlib import Path
 
 import importlib_resources
 import numpy as np
 import pandas as pd
 from monty.json import MontyDecoder, MSONable
-from monty.os import cd
 from pydirac.analysis.polarizability import get_polarizability
 from pydirac.core.periodic import Element
 from pydirac.core.settings import Settings
@@ -529,6 +526,7 @@ class DCCCDataProcessor(AtomAbstractDataProcessor):
             pos, scale = 1, 4
         else:
             pos, scale = 0, 1
+        scale = scale
 
         body_lis = []
         polar_error = self.polar_error
@@ -653,9 +651,9 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
         if gp in [13, 14, 15, 16, 17]:
             body = load_tex_template(f"mrci_group_{gp}_body.tex")
         elif gp in [1, 11]:
-            body = load_tex_template(f"mrci_group_1_11_body.tex")
+            body = load_tex_template("mrci_group_1_11_body.tex")
         elif gp in [2, 12, 18]:
-            body = load_tex_template(f"mrci_group_2_12_18_body.tex")
+            body = load_tex_template("mrci_group_2_12_18_body.tex")
         else:
             raise RuntimeError(f"Not support group {gp}")
 
@@ -859,7 +857,7 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
     def find_best(self):
         """See `AbstractDataProcessor.find_best`."""
         symbol = self.symbol
-        if symbol in best_dict[self.METHOD]:
+        if symbol in best_dict[self.METHOD] and len(best_dict[self.METHOD][symbol][0]):
             gs_ct = best_dict[self.METHOD][symbol][0]
             key = symbol + "@" + gs_ct
             gs_res = self.polar[key]

@@ -3,7 +3,7 @@ from collections import OrderedDict
 import numpy as np
 import pandas as pd
 
-from pydirac_papertools.constant import *
+from pydirac_papertools.constant import get_gs_term, get_reference_values, get_sym_root
 
 __all__ = ["Tabulator"]
 
@@ -221,7 +221,10 @@ class Tabulator:
 
         hams = ["NR", "NR-SR", "DC-SR", "DC"]
         calc_section_key = "Calc."
-        methods = ["CCSD(T)", "MRCISD"]
+        if group in [1, 2, 14, 18]:
+            methods = ["CCSD(T)"]
+        else:
+            methods = ["CCSD(T)", "MRCISD"]
 
         def _reindex():
             """Reindex the table using multiple indexes of DataFrame."""

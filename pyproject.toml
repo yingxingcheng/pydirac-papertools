@@ -34,6 +34,10 @@ dependencies = [
     "pydirac==2024.6.3",
 ]
 
+[project.optional-dependencies]
+dev = ["pre-commit"]
+tests = ['pytest']
+
 [project.urls]
 Issues = "https://github.com/yingxingcheng/pydirac-papertools/issues"
 Source = "https://github.com/yingxingcheng/pydirac-papertools/"
@@ -62,4 +66,8 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.setuptools.package-data]
 "pydirac_papertools.data" = ["data/*.*"]
-# "pydirac.tests" = ["data/**/*.*", "data/**/**/*.*", "data/**/**/**/*.*"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-v"

@@ -1,0 +1,983 @@
+  ** interface to 64-bit integer MPI enabled **
+
+DIRAC master    (node3413.kirlia.os) starts by allocating     2580000000 r*8 words (  19.222 GB) of memory
+DIRAC nodes 1 to 35 starts by allocating          2580000000 r*8 words (  19.222 GB) of memory
+DIRAC master    (node3413.kirlia.os) to allocate at most      2680000000 r*8 words (  19.968 GB) of memory
+
+Note: maximum allocatable memory for master+nodes can be set by -aw (MW)/-ag (GB) flags in pam
+
+DIRAC nodes 1 to 35 to allocate at most           2680000000 r*8 words (  19.968 GB) of memory
+ *******************************************************************************
+ *                                                                             *
+ *                                O U T P U T                                  *
+ *                                   from                                      *
+ *                                                                             *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                    *
+ *                   @@  @@        @@  @@   @@  @@   @@                        *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                        *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                        *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                    *
+ *                                                                             *
+ *                                                                             *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:%
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::$
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::(
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:$
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.S
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::S
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::?
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.S
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.(
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/$
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:iS
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::c
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::S
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::$
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::$
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::(
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:Z
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|(
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||S
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:$
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::%
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:$
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::$
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/)
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii$
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////$
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/Z
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::$
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::&
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/=
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|$
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>M
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:M
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%M
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;M
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<SM
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$SM
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<M
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></M
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&M
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SFM
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]ZkM
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&M
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&M
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&FM
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&M
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6M
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969kM
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&M
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1M
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&M
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9ZM
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6M
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][FM
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&M
+ *******************************************************************************
+ *                                                                             *
+ *         =========================================================           *
+ *                     Program for Atomic and Molecular                        *
+ *          Direct Iterative Relativistic All-electron Calculations            *
+ *         =========================================================           *
+ *                                                                             *
+ *                                                                             *
+ *    Written by:                                                              *
+ *                                                                             *
+ *    Trond Saue               Universite Toulouse III           France        *
+ *    Lucas Visscher           Vrije Universiteit Amsterdam      Netherlands   *
+ *    Hans Joergen Aa. Jensen  University of Southern Denmark    Denmark       *
+ *    Radovan Bast             UiT The Arctic University of      Norway        *
+ *                                                                             *
+ *    with contributions from:                                                 *
+ *                                                                             *
+ *    Vebjoern Bakken          University of Oslo                Norway        *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA           *
+ *    Sebastien Dubillard      University of Strasbourg          France        *
+ *    Ulf Ekstroem             University of Oslo                Norway        *
+ *    Ephraim Eliav            University of Tel Aviv            Israel        *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark       *
+ *    Elke Fasshauer           University of Aarhus              Denmark       *
+ *    Timo Fleig               Universite Toulouse III           France        *
+ *    Olav Fossgaard           UiT The Arctic University of      Norway        *
+ *    Andre S. P. Gomes        CNRS/Universite de Lille          France        *
+ *    Erik D. Hedegaard        Lund University                   Sweden        *
+ *    Trygve Helgaker          University of Oslo                Norway        *
+ *    Benjamin Helmich-Paris   Max Planck Institute f. Coal Res. Germany       *
+ *    Johan Henriksson         Linkoeping University             Sweden        *
+ *    Miroslav Ilias           Matej Bel University              Slovakia      *
+ *    Christoph R. Jacob       TU Braunschweig                   Germany       *
+ *    Stefan Knecht            ETH Zuerich                       Switzerland   *
+ *    Stanislav Komorovsky     UiT The Arctic University of      Norway        *
+ *    Ossama Kullie            University of Kassel              Germany       *
+ *    Jon K. Laerdahl          University of Oslo                Norway        *
+ *    Christoffer V. Larsen    University of Southern Denmark    Denmark       *
+ *    Yoon Sup Lee             KAIST, Daejeon                    South Korea   *
+ *    Huliyar S. Nataraj       BME/Budapest Univ. Tech. & Econ.  Hungary       *
+ *    Malaya Kumar Nayak       Bhabha Atomic Research Centre     India         *
+ *    Patrick Norman           Linkoeping University             Sweden        *
+ *    Malgorzata Olejniczak    CNRS/Universite de Lille          France        *
+ *    Jeppe Olsen              Aarhus University                 Denmark       *
+ *    Jogvan Magnus H. Olsen   University of Southern Denmark    Denmark       *
+ *    Young Choon Park         KAIST, Daejeon                    South Korea   *
+ *    Jesper K. Pedersen       University of Southern Denmark    Denmark       *
+ *    Markus Pernpointner      University of Heidelberg          Germany       *
+ *    Roberto Di Remigio       UiT The Arctic University of      Norway        *
+ *    Kenneth Ruud             UiT The Arctic University of      Norway        *
+ *    Pawel Salek              Stockholm Inst. of Technology     Sweden        *
+ *    Bernd Schimmelpfennig    Karlsruhe Institute of Technology Germany       *
+ *    Avijit Shee              University of Michigan            USA           *
+ *    Jetze Sikkema            Vrije Universiteit Amsterdam      Netherlands   *
+ *    Andreas J. Thorvaldsen   UiT The Arctic University of      Norway        *
+ *    Joern Thyssen            University of Southern Denmark    Denmark       *
+ *    Joost van Stralen        Vrije Universiteit Amsterdam      Netherlands   *
+ *    Sebastien Villaume       Linkoeping University             Sweden        *
+ *    Olivier Visser           University of Groningen           Netherlands   *
+ *    Toke Winther             University of Southern Denmark    Denmark       *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan         *
+ *                                                                             *
+ *    For more information about the DIRAC code see http://diracprogram.org    *
+ *                                                                             *
+ *    This is an experimental code. The authors accept no responsibility       *
+ *    for the performance of the code or for the correctness of the results.   *
+ *                                                                             *
+ *    The code (in whole or part) is not to be reproduced for further          *
+ *    distribution without the written permission of the authors or            *
+ *    their representatives.                                                   *
+ *                                                                             *
+ *    If results obtained with this code are published, an                     *
+ *    appropriate citation would be:                                           *
+ *                                                                             *
+ *    DIRAC, a relativistic ab initio electronic structure program,            *
+ *    Release DIRAC18 (2018),                                                  *
+ *    written by T. Saue, L. Visscher, H. J. Aa. Jensen, and R. Bast,          *
+ *    with contributions from V. Bakken, K. G. Dyall, S. Dubillard,            *
+ *    U. Ekstroem, E. Eliav, T. Enevoldsen, E. Fasshauer, T. Fleig,            *
+ *    O. Fossgaard, A. S. P. Gomes, E. D. Hedegaard, T. Helgaker,              *
+ *    J. Henriksson, M. Ilias, Ch. R. Jacob, S. Knecht, S. Komorovsky,         *
+ *    O. Kullie, J. K. Laerdahl, C. V. Larsen, Y. S. Lee, H. S. Nataraj,       *
+ *    M. K. Nayak, P. Norman, G. Olejniczak, J. Olsen, J. M. H. Olsen,         *
+ *    Y. C. Park, J. K. Pedersen, M. Pernpointner, R. Di Remigio, K. Ruud,     *
+ *    P. Salek, B. Schimmelpfennig, A. Shee, J. Sikkema, A. J. Thorvaldsen,    *
+ *    J. Thyssen, J. van Stralen, S. Villaume, O. Visser,T. Winther,           *
+ *    and S. Yamamoto (see http://diracprogram.org).                           *
+ *                                                                             *
+ *******************************************************************************
+
+
+Version information
+-------------------
+
+Branch        |
+Commit hash   |
+Commit author |
+Commit date   |
+
+
+Configuration and build information
+-----------------------------------
+
+Who compiled             | vsc43080
+Compiled on server       | gligar05.gastly.os
+Operating system         | Linux-3.10.0-1062.9.1.el7.ug.x86_64
+CMake version            | 3.13.3
+CMake generator          | Unix Makefiles
+CMake build type         | release
+Configuration time       | 2020-07-13 20:32:57.507897
+Python version           | 2.7.1
+Fortran compiler         | /apps/gent/CO7/haswell-ib/software/impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1/bin64/mpif90
+Fortran compiler version | 8.2.0
+Fortran compiler flags   |  -ilp64 -g -fcray-pointer -fbacktrace -fno-range-check -DVAR_GFORTRAN -DVAR_MFDS  -fdefault-integer-8 -ilp64 -g -fcray-pointer -fbacktrace -fno-range-check -DVAR_GFORTRAN -DVAR_MFDS  -fdefault-integer-8
+C compiler               | /apps/gent/CO7/haswell-ib/software/impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1/bin64/mpicc
+C compiler version       | 8.2.0
+C compiler flags         |  -ilp64 -g  -ilp64 -g
+C++ compiler             | /apps/gent/CO7/haswell-ib/software/impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1/bin64/mpicxx
+C++ compiler version     | 8.2.0
+C++ compiler flags       |  -ilp64 -g -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused  -ilp64 -g -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused
+Static linking           | False
+64-bit integers          | True
+MPI parallelization      | True
+MPI launcher             | /apps/gent/CO7/haswell-ib/software/impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1/bin64/mpiexec
+Math libraries           | -Wl,--start-group;/apps/gent/CO7/haswell-ib/software/imkl/2019.1.144-iimpi-2019a/mkl/lib/intel64/libmkl_lapack95_ilp64.a;/apps/gent/CO7/haswell-ib/software/imkl/2019.1.144-iimpi-2019a/mkl/lib/intel64/libmkl_gf_ilp64.so;-fopenmp;-Wl,--end-group;-Wl,--start-group;/apps/gent/CO7/haswell-ib/software/imkl/2019.1.144-iimpi-2019a/mkl/lib/intel64/libmkl_gf_ilp64.so;/apps/gent/CO7/haswell-ib/software/imkl/2019.1.144-iimpi-2019a/mkl/lib/intel64/libmkl_gnu_thread.so;/apps/gent/CO7/haswell-ib/software/imkl/2019.1.144-iimpi-2019a/mkl/lib/intel64/libmkl_core.so;/usr/lib64/libpthread.so;/usr/lib64/libm.so;-fopenmp;-Wl,--end-group
+Builtin BLAS library     | OFF
+Builtin LAPACK library   | OFF
+Explicit libraries       | unknown
+Compile definitions      | HAVE_MPI;VAR_MPI;VAR_MPI2;USE_MPI_MOD_F90;SYS_LINUX;PRG_DIRAC;INT_STAR8;INSTALL_WRKMEM=64000000;HAS_PCMSOLVER;BUILD_GEN1INT;HAS_PELIB;MOD_QCORR;HAS_STIELTJES
+
+
+ Selftest of ISO_C_BINDING Fortran - C/C++ interoperability PASSED
+
+Execution time and host
+-----------------------
+
+
+     Date and time (Linux)  : Tue Aug 25 21:14:18 2020
+     Host name              : node3413.kirlia.os
+
+
+Contents of the input file
+--------------------------
+
+**DIRAC
+.TITLE
+Al, SCF
+.WAVE F
+.4INDEX
+.ANALYZE
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+**HAMILTONIAN
+.DOSSSS
+.OPERATOR
+ ZDIPLEN
+ COMFACTOR
+ +0.0015
+**INTEGRALS
+*READINP
+.UNCONTRACT
+**WAVE FUNCTIONS
+#.SCF
+.KR CI
+.RESOLVE
+*SCF
+# Al atom and Econf: 1s^2 2s^2 2p^6 3s^2 3p^1
+.CLOSED SHELL
+12
+.OPEN SHELL
+1
+1/6
+.EVCCNV
+1.0D-9  5.0D-8
+.MAXITR
+60
+*KRCICALC
+.CI PROGRAM
+LUCIAREL
+.INACTIVE
+0
+.GAS SHELLS
+3
+10 12 / 6
+11 13 / 3
+13 13 / 109
+.CIROOTS
+3 3
+.CIROOTS
+4 3
+.MAX CI
+120
+.MXCIVE
+60
+.ANALYZ
+.RSTRCI
+0
+.CHECKP
+*END OF
+
+
+Contents of the molecule file
+-----------------------------
+
+INTGRL
+Al atom
+dyall.acv4z
+C   1    2  X  Y
+    13.    1
+Al    0.0000000000        0.0000000000        0.0000000000
+LARGE BASIS dyall.acv4z
+FINISH
+
+
+
+    *************************************************************************
+    ******************************** Al, SCF ********************************
+    *************************************************************************
+
+ Jobs in this run:
+   * Wave function
+   * Analysis
+   * Transformation to Molecular Spinor basis
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998
+                Peter J. Mohr and Barry N. Taylor
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999
+ * The speed of light :        137.0359998
+ * Running in four-component mode
+ * Parallel run with 35 slaves.
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Transformation to scalar RKB basis embedded in
+   MO-transformation for small components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Changes of defaults for *READIN
+ -------------------------------
+
+
+ Uncontracted basis forced, irrespective of basis input file.
+
+
+
+   ***************************************************************************
+   ****************** Output from MOLECULE input processing ******************
+   ***************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Al atom
+  dyall.acv4z
+  Nuclear Gaussian exponent for atom of charge  13.000 :    4.4335984491D+08
+
+
+  Symmetry Operations
+  -------------------
+
+  Symmetry operations: 2
+
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: C2v
+
+   * The point group was generated by:
+
+      Reflection in the yz-plane
+      Reflection in the xz-plane
+
+   * Group multiplication table
+
+        |  E   C2z  Oxz  Oyz
+   -----+--------------------
+     E  |  E   C2z  Oxz  Oyz
+    C2z | C2z   E   Oyz  Oxz
+    Oxz | Oxz  Oyz   E   C2z
+    Oyz | Oyz  Oxz  C2z   E
+
+   * Character table
+
+        |  E   C2z  Oxz  Oyz
+   -----+--------------------
+    A1  |   1    1    1    1
+    B1  |   1   -1    1   -1
+    B2  |   1   -1   -1    1
+    A2  |   1    1   -1   -1
+
+   * Direct product table
+
+        | A1   B1   B2   A2
+   -----+--------------------
+    A1  | A1   B1   B2   A2
+    B1  | B1   A1   A2   B2
+    B2  | B2   A2   A1   B1
+    A2  | A2   B2   B1   A1
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1
+   * Real group. NZ = 1
+   * Direct product decomposition:
+          E1  x E1  : A1  + A2  + B1  + B2
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A1 (1)  A2 (2)  |
+      Sa  |  A2 (1)  A1 (2)  |
+      Lb  |  B1 (3)  B2 (4)  |
+      Sb  |  B2 (3)  B1 (4)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A1   1
+    B1   j
+    B2   k
+    A2   i
+
+  QM-QM nuclear repulsion energy :      0.000000000000
+
+
+
+                                 Isotopic Masses
+                                 ---------------
+
+                           Al         26.981541
+
+                       Total mass:    26.981541 amu
+                       Natural abundance: 100.000 %
+
+ Center-of-mass coordinates (a.u.):    0.000000    0.000000    0.000000
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types :    1
+  Total number of atoms:    1
+
+  label    atoms   charge   prim    cont     basis
+  ----------------------------------------------------------------------
+  Al          1      13     238     238      L  - [25s15p8d6f4g|25s15p8d6f4g]
+                            534     534      S  - [15s33p21d12f6g4h|15s33p21d12f6g4h]
+  ----------------------------------------------------------------------
+                            238     238      L  - large components
+                            534     534      S  - small components
+  ----------------------------------------------------------------------
+  total:      1      13     772     772
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1
+   1s:    K.G. Dyall, unpublished.
+   2p-3p: K.G. Dyall, Theor. Chem. Acc. (2016) 135:128.
+   4p-6p: K.G. Dyall, Theor. Chem. Acc. (2006) 115:441
+      7p: K.G. Dyall, Theor. Chem. Acc. (2012) 131:1172
+   Available from the Dirac web site, http://dirac.chem.sdu.dk.
+   H
+
+
+  Cartesian Coordinates (bohr)
+  ----------------------------
+
+  Total number of coordinates:  3
+
+
+   1   Al       x      0.0000000000
+   2            y      0.0000000000
+   3            z      0.0000000000
+
+
+
+  Cartesian coordinates in XYZ format (Angstrom)
+  ----------------------------------------------
+
+    1
+
+Al     0.0000000000   0.0000000000   0.0000000000
+
+
+  Symmetry Coordinates
+  --------------------
+
+  Number of coordinates in each symmetry:     1    1    1    0
+
+
+  Symmetry  A1 ( 1)
+
+    1   Al    z    3
+
+
+  Symmetry  B1 ( 2)
+
+    2   Al    x    1
+
+
+  Symmetry  B2 ( 3)
+
+    3   Al    y    2
+
+
+  This is an atomic calculation.
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   35
+     1  L Al  1 s        2  L Al  1 px       3  L Al  1 py       4  L Al  1 pz       5  L Al  1 dxx      6  L Al  1 dxy
+     7  L Al  1 dxz      8  L Al  1 dyy      9  L Al  1 dyz     10  L Al  1 dzz     11  L Al  1 fxxx    12  L Al  1 fxxy
+    13  L Al  1 fxxz    14  L Al  1 fxyy    15  L Al  1 fxyz    16  L Al  1 fxzz    17  L Al  1 fyyy    18  L Al  1 fyyz
+    19  L Al  1 fyzz    20  L Al  1 fzzz    21  L Al  1 g400    22  L Al  1 g310    23  L Al  1 g301    24  L Al  1 g220
+    25  L Al  1 g211    26  L Al  1 g202    27  L Al  1 g130    28  L Al  1 g121    29  L Al  1 g112    30  L Al  1 g103
+    31  L Al  1 g040    32  L Al  1 g031    33  L Al  1 g022    34  L Al  1 g013    35  L Al  1 g004
+   * Small components:   56
+    36  S Al  1 s       37  S Al  1 px      38  S Al  1 py      39  S Al  1 pz      40  S Al  1 dxx     41  S Al  1 dxy
+    42  S Al  1 dxz     43  S Al  1 dyy     44  S Al  1 dyz     45  S Al  1 dzz     46  S Al  1 fxxx    47  S Al  1 fxxy
+    48  S Al  1 fxxz    49  S Al  1 fxyy    50  S Al  1 fxyz    51  S Al  1 fxzz    52  S Al  1 fyyy    53  S Al  1 fyyz
+    54  S Al  1 fyzz    55  S Al  1 fzzz    56  S Al  1 g400    57  S Al  1 g310    58  S Al  1 g301    59  S Al  1 g220
+    60  S Al  1 g211    61  S Al  1 g202    62  S Al  1 g130    63  S Al  1 g121    64  S Al  1 g112    65  S Al  1 g103
+    66  S Al  1 g040    67  S Al  1 g031    68  S Al  1 g022    69  S Al  1 g013    70  S Al  1 g004    71  S Al  1 h500
+    72  S Al  1 h410    73  S Al  1 h401    74  S Al  1 h320    75  S Al  1 h311    76  S Al  1 h302    77  S Al  1 h230
+    78  S Al  1 h221    79  S Al  1 h212    80  S Al  1 h203    81  S Al  1 h140    82  S Al  1 h131    83  S Al  1 h122
+    84  S Al  1 h113    85  S Al  1 h104    86  S Al  1 h050    87  S Al  1 h041    88  S Al  1 h032    89  S Al  1 h023
+    90  S Al  1 h014    91  S Al  1 h005
+
+
+                                GETLAB: SO-labels
+                                -----------------
+
+   * Large components:   35
+     1  L A1 Al s        2  L A1 Al pz       3  L A1 Al dxx      4  L A1 Al dyy      5  L A1 Al dzz      6  L A1 Al fxxz
+     7  L A1 Al fyyz     8  L A1 Al fzzz     9  L A1 Al g400    10  L A1 Al g220    11  L A1 Al g202    12  L A1 Al g040
+    13  L A1 Al g022    14  L A1 Al g004    15  L B1 Al px      16  L B1 Al dxz     17  L B1 Al fxxx    18  L B1 Al fxyy
+    19  L B1 Al fxzz    20  L B1 Al g301    21  L B1 Al g121    22  L B1 Al g103    23  L B2 Al py      24  L B2 Al dyz
+    25  L B2 Al fxxy    26  L B2 Al fyyy    27  L B2 Al fyzz    28  L B2 Al g211    29  L B2 Al g031    30  L B2 Al g013
+    31  L A2 Al dxy     32  L A2 Al fxyz    33  L A2 Al g310    34  L A2 Al g130    35  L A2 Al g112
+   * Small components:   56
+    36  S A1 Al s       37  S A1 Al pz      38  S A1 Al dxx     39  S A1 Al dyy     40  S A1 Al dzz     41  S A1 Al fxxz
+    42  S A1 Al fyyz    43  S A1 Al fzzz    44  S A1 Al g400    45  S A1 Al g220    46  S A1 Al g202    47  S A1 Al g040
+    48  S A1 Al g022    49  S A1 Al g004    50  S A1 Al h401    51  S A1 Al h221    52  S A1 Al h203    53  S A1 Al h041
+    54  S A1 Al h023    55  S A1 Al h005    56  S B1 Al px      57  S B1 Al dxz     58  S B1 Al fxxx    59  S B1 Al fxyy
+    60  S B1 Al fxzz    61  S B1 Al g301    62  S B1 Al g121    63  S B1 Al g103    64  S B1 Al h500    65  S B1 Al h320
+    66  S B1 Al h302    67  S B1 Al h140    68  S B1 Al h122    69  S B1 Al h104    70  S B2 Al py      71  S B2 Al dyz
+    72  S B2 Al fxxy    73  S B2 Al fyyy    74  S B2 Al fyzz    75  S B2 Al g211    76  S B2 Al g031    77  S B2 Al g013
+    78  S B2 Al h410    79  S B2 Al h230    80  S B2 Al h212    81  S B2 Al h050    82  S B2 Al h032    83  S B2 Al h014
+    84  S A2 Al dxy     85  S A2 Al fxyz    86  S A2 Al g310    87  S A2 Al g130    88  S A2 Al g112    89  S A2 Al h311
+    90  S A2 Al h131    91  S A2 Al h113
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          313   185   185    89
+  Number of large orbitals in each symmetry:    106    53    53    26
+  Number of small orbitals in each symmetry:    207   132   132    63
+
+* Large component functions
+
+  Symmetry  A1 ( 1)
+
+       25 functions:    Al s
+       15 functions:    Al pz
+        8 functions:    Al dxx
+        8 functions:    Al dyy
+        8 functions:    Al dzz
+        6 functions:    Al fxxz
+        6 functions:    Al fyyz
+        6 functions:    Al fzzz
+        4 functions:    Al g400
+        4 functions:    Al g220
+        4 functions:    Al g202
+        4 functions:    Al g040
+        4 functions:    Al g022
+        4 functions:    Al g004
+
+  Symmetry  B1 ( 2)
+
+       15 functions:    Al px
+        8 functions:    Al dxz
+        6 functions:    Al fxxx
+        6 functions:    Al fxyy
+        6 functions:    Al fxzz
+        4 functions:    Al g301
+        4 functions:    Al g121
+        4 functions:    Al g103
+
+  Symmetry  B2 ( 3)
+
+       15 functions:    Al py
+        8 functions:    Al dyz
+        6 functions:    Al fxxy
+        6 functions:    Al fyyy
+        6 functions:    Al fyzz
+        4 functions:    Al g211
+        4 functions:    Al g031
+        4 functions:    Al g013
+
+  Symmetry  A2 ( 4)
+
+        8 functions:    Al dxy
+        6 functions:    Al fxyz
+        4 functions:    Al g310
+        4 functions:    Al g130
+        4 functions:    Al g112
+
+* Small component functions
+
+  Symmetry  A1 ( 1)
+
+       15 functions:    Al s
+       33 functions:    Al pz
+       21 functions:    Al dxx
+       21 functions:    Al dyy
+       21 functions:    Al dzz
+       12 functions:    Al fxxz
+       12 functions:    Al fyyz
+       12 functions:    Al fzzz
+        6 functions:    Al g400
+        6 functions:    Al g220
+        6 functions:    Al g202
+        6 functions:    Al g040
+        6 functions:    Al g022
+        6 functions:    Al g004
+        4 functions:    Al h401
+        4 functions:    Al h221
+        4 functions:    Al h203
+        4 functions:    Al h041
+        4 functions:    Al h023
+        4 functions:    Al h005
+
+  Symmetry  B1 ( 2)
+
+       33 functions:    Al px
+       21 functions:    Al dxz
+       12 functions:    Al fxxx
+       12 functions:    Al fxyy
+       12 functions:    Al fxzz
+        6 functions:    Al g301
+        6 functions:    Al g121
+        6 functions:    Al g103
+        4 functions:    Al h500
+        4 functions:    Al h320
+        4 functions:    Al h302
+        4 functions:    Al h140
+        4 functions:    Al h122
+        4 functions:    Al h104
+
+  Symmetry  B2 ( 3)
+
+       33 functions:    Al py
+       21 functions:    Al dyz
+       12 functions:    Al fxxy
+       12 functions:    Al fyyy
+       12 functions:    Al fyzz
+        6 functions:    Al g211
+        6 functions:    Al g031
+        6 functions:    Al g013
+        4 functions:    Al h410
+        4 functions:    Al h230
+        4 functions:    Al h212
+        4 functions:    Al h050
+        4 functions:    Al h032
+        4 functions:    Al h014
+
+  Symmetry  A2 ( 4)
+
+       21 functions:    Al dxy
+       12 functions:    Al fxyz
+        6 functions:    Al g310
+        6 functions:    Al g130
+        6 functions:    Al g112
+        4 functions:    Al h311
+        4 functions:    Al h131
+        4 functions:    Al h113
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Dirac-Coulomb Hamiltonian
+   with the following modifications:
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     1
+   - SS-integrals:     1
+   - GT-integrals:     0
+ * Basis set:
+   - uncontracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * Default RKB projection:
+   1: Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+   - The following finite-field one-electron operators have been added:
+---------------------------------------------------------------------------
+    Operator no.  1:   ZDIPLEN
+---------------------------------------------------------------------------
+    1  ZDIPLEN              A1      T+
+...........................................................................
+      Operator type DIAGONAL : scalar operator
+      Labels and factors     : ZDIPLEN  +00+     0.150000000E-02 (real)
+...........................................................................
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Wave function types requested (in input order):
+     KR-CI
+     RESOLVE
+
+ Wave function jobs in execution order (expanded):
+ * Followed by resolution of open-shell states
+ * Kramers restricted CI calculation
+===========================================================================
+ *SCF: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 1
+ * Open shell SCF calculation using Average-of-Configuration
+
+ * Shell specifications:
+
+                                        Orbitals
+                        #electrons  irrep 1  irrep 2     f        a      alpha
+                        ----------  -------  -------  -------  -------  -------
+   Closed shell           12             6      N/A    1.0000   1.0000   0.0000
+   Open shell no. 1        1.00          3      N/A    0.1667   0.0000   1.2000
+   ----------------------------------------------------------------------------
+   Total                  13.00          9
+
+   f is the fraction occupation; a and alpha open shell coupling coefficients.
+
+===========================================================================
+ *KRCICALC: General set-up for KR-CI calculation:
+===========================================================================
+ * Inactive orbitals     :    0
+ * Active orbitals       :  118
+ * Active electrons      :   13
+ * GAS space setup for   3 GAS space(s) :
+   - GAS space   1       :    6
+    (constraints: min/max active electrons after space :  10/ 12)
+   - GAS space   2       :    3
+    (constraints: min/max active electrons after space :  11/ 13)
+   - GAS space   3       :  109
+    (constraints: min/max active electrons after space :  13/ 13)
+ * CI program used       : LUCIAREL
+ * Convergence of CI function(s) in the following symmetries:
+    **   3 eigenstate(s) in symmetry (fermion):   a
+    -- Allowed interval of 2 * MK : -13 to  13
+    **   3 eigenstate(s) in symmetry (fermion):   b
+    -- Allowed interval of 2 * MK : -13 to  13
+ * Using symmetry nomenclature for LUCIAREL.
+      Boson and Fermion irreps of complex (sub)groups
+
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+   SL-integrals.
+   SS-integrals.
+ * General print level   :    0
+===========================================================================
+ Control parameters for KR-CI optimization
+===========================================================================
+ * Energy convergence threshold:   8.00D-13
+ * Maximum number of CI iterations for each symmetry: 120
+ * Maximum subspace dimension set to  60
+ * Integrals on slave nodes provided by the MASTER
+
+ * Write check point file in parallel CI calculation
+===========================================================================
+ RESINP: Set-up for resolution of open-shell states:
+===========================================================================
+ * General print level   :   0
+ * 4-index transformation follows scheme      :   4
+ - write (rs)-batches of half-transformed integrals
+ (ij|rs) to disk; parallel scheme
+ * Screening threshold : 1.00E-14
+ * Gaunt integrals not included.
+
+
+   ***************************************************************************
+   ***************************** Analysis module *****************************
+   ***************************************************************************
+
+ Jobs in this run:
+ * Mulliken population analysis
+===========================================================================
+ POPINP: Mulliken population analysis
+===========================================================================
+ * Gross populations
+ * Label definitions based on SO-labels
+ * Number of spinors analyzed:
+    - Orbitals in fermion ircop E1  :1..oo
+ * Print level:    1
+
+No input for integrals transformation, using defaults
+===========================================================================
+ TRPINP: Property integral transformation
+===========================================================================
+ * Print level:    0
+ *The following operators will be transformed:
+    1  XDIPLEN              B1      T+
+...........................................................................
+      Operator type DIAGONAL : scalar operator
+      Labels and factors     : XDIPLEN  +00+     1.0000000000000 (real)
+...........................................................................
+    2  YDIPLEN              B2      T+
+...........................................................................
+      Operator type DIAGONAL : scalar operator
+      Labels and factors     : YDIPLEN  +00+     1.0000000000000 (real)
+...........................................................................
+    3  ZDIPLEN              A1      T+
+...........................................................................
+      Operator type DIAGONAL : scalar operator
+      Labels and factors     : ZDIPLEN  +00+     1.0000000000000 (real)
+...........................................................................
+---------------------------------------------------------------------------
+
+
+
+===========================================================================
+ TRAINP: Set-up for index transformation
+===========================================================================
+
+ * General print level   :   0
+ * Electronic orbitals only.
+ * Total active space.
+    Fermion ircop:E1
+     No explicit orbitals specified
+
+ * Set-up for 2-index transformation
+ * Active spaces:
+    Fermion ircop:E1
+     No explicit orbitals specified for index  1
+     No explicit orbitals specified for index  2
+
+ * Set-up for 4-index transformation
+ * Following scheme      :   6
+ - write half-transformed integrals (ij|rs) to disk
+ - sorting of intermediate 1HT integrals is disabled
+ * Screening threshold :1.00E-14
+ * MO integral threshold :1.00E-14
+ * Gaunt Integrals not transformed.
+ * 4-index transformed integrals written to file.
+ * Active spaces:
+    Fermion ircop:E1
+     No explicit orbitals specified for index  1
+     No explicit orbitals specified for index  2
+     No explicit orbitals specified for index  3
+     No explicit orbitals specified for index  4
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u.
+
+Total time used in ONEGEN (CPU)  0.08437600s and (WALL)  0.11235509s
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A1    * Deleted:         26(Proj:         26, Lindep:          0) Smin: 0.12E-03
+   L   B1    * Deleted:         10(Proj:         10, Lindep:          0) Smin: 0.28E-02
+   L   B2    * Deleted:         10(Proj:         10, Lindep:          0) Smin: 0.28E-02
+   L   A2    * Deleted:          4(Proj:          4, Lindep:          0) Smin: 0.18E-01
+   S   A1    * Deleted:         63(Proj:         63, Lindep:          0) Smin: 0.82E-07
+   S   B1    * Deleted:         30(Proj:         30, Lindep:          0) Smin: 0.82E-07
+   S   B2    * Deleted:         30(Proj:         30, Lindep:          0) Smin: 0.82E-07
+   S   A2    * Deleted:         10(Proj:         10, Lindep:          0) Smin: 0.24E-05
+
+
+                                Output from MODHAM
+                                ------------------
+
+ * Applied strict kinetic balance !
+ * Applied SL-regrouping on AO2MO tranf.matrix in SLSORT.
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+No. of positive energy orbitals (NESH):   188
+No. of negative energy orbitals (NPSH):   188
+Total no. of orbitals           (NORB):   376
+ >>> CPU  time used in PAMSET is   0.17 seconds
+ >>> WALL time used in PAMSET is   0.23 seconds
+
+
+    *************************************************************************
+    ******************** Resolution of open-shell states ********************
+    *************************************************************************
+
+- Number of active electrons:    1
+- Active orbitals:
+
+
+ * Fermion ircop E1
+
+      Index 1    3 orbitals
+          7    8    9
+- Core orbitals:
+
+
+ * Fermion ircop E1
+
+      Index 1    6 orbitals
+          1    2    3    4    5    6
+
+RESOLV ERROR: MO coefficient file not present
+
+  Master node : --- SEVERE ERROR, PROGRAM WILL BE ABORTED ---
+
+ Date and time (Linux) : Tue Aug 25 21:14:19 2020
+ RESOLV: No MO coefficients !
+
+ Traceback from this point (resolv_+0x17c7): 6 frames.
+
+  5   function name:                   resolv_+0x17c7
+  4   function name:                     pampsi_+0xbc
+  3   function name:   Unknown
+  2   function name:                     dirac_+0x195
+  1   function name:   Unknown
+  0   function name:                        main+0x1d
+
+DIRAC pam run in /kyukon/scratch/gent/vo/000/gvo00003/vsc43080/previous_dipole_polar/dipole_polar/Al_mrci/dyall.acv4z_+0.0015
+
+ ====  below this line is the stderr stream  ====
+
+  Master node : --- SEVERE ERROR, PROGRAM WILL BE ABORTED ---
+ RESOLV: No MO coefficients !
+application called MPI_Abort(MPI_COMM_WORLD, -9999) - process 0
