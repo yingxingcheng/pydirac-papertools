@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pydirac-papertools"
-version = "2023.4.5"
+version = "2024.6.3"
 authors = [
   { name="YingXing Cheng", email="yxcheng2buaa@gmail.com" },
 ]
