@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pydirac-papertools"
+version = "2023.4.5"
+authors = [
+  { name="YingXing Cheng", email="yxcheng2buaa@gmail.com" },
+]
+description = 'Tools for writting database of dipole polarizability'
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.6"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Framework :: Matplotlib",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing",
+]
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "importlib-resources",
+]
+
+[project.urls]
+Issues = "https://github.com/yingxingcheng/pydirac-papertools/issues"
+Source = "https://github.com/yingxingcheng/pydirac-papertools/"
+Changelog = "https://github.com/yingxingcheng/pydirac-papertools/blob/main/CHANGELOG.md"
+
+# [project.scripts]
+# pypam = "pydirac_papertools.cli.pypam:main"
+
+[tool.ruff]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = ["E", "F"]
+ignore = ["E741", "E501"]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
+unfixable = []
+
+per-file-ignores = {"__init__.py" = ["F403"]}
+
+# Same as Black.
+line-length = 100
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.setuptools.package-data]
+"paper_helper" = ["data/*.*"]
+# "pydirac.tests" = ["data/**/*.*", "data/**/**/*.*", "data/**/**/**/*.*"]
