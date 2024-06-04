@@ -2,6 +2,7 @@ import json
 import os.path
 
 import importlib_resources
+import numpy as np
 from pydirac.core.settings import Settings
 
 __all__ = ["BEST_CALC_DICT", "get_tag", "get_error_tex", "load_tex_template"]
@@ -13,8 +14,7 @@ BEST_CALC_DICT = Settings(
 
 
 def get_error_tex(error):
-    return error
-    # return "" if np.isclose(error, 0.0) else rf"\pm {error}"
+    return "" if np.isclose(error, 0.0) else rf"\pm {error}"
 
 
 def get_tag(method):
