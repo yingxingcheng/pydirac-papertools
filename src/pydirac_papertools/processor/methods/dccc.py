@@ -119,6 +119,8 @@ class DCCCDataProcessor(AtomAbstractDataProcessor):
                 d["Tag"] = tags[ct] if ct in tags else 0
                 for method, outs in energies.items():
                     d[method.strip("_e").upper()] = outs[i]
+                if field > self.threshold:
+                    continue
                 data_list.append(d)
         df = pd.DataFrame(data_list)
         df.set_index("calc_type", inplace=True)

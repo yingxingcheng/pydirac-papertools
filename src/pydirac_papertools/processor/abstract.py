@@ -97,7 +97,7 @@ class AtomAbstractDataProcessor(AbstractDataProcessor):
     KEYS_FOR_SAVE += ["patterns"]
     OPTION_KEYS_FOR_SAVE = ["polar", "polar_error", "energy"]
 
-    def __init__(self, dirname, symbol, is_quad=False, patterns=None):
+    def __init__(self, dirname, symbol, is_quad=False, patterns=None, field_threshold=None):
         self.dirname = os.path.abspath(dirname)
         self.element = Element(symbol)
         self.symbol = self.element.symbol
@@ -110,12 +110,19 @@ class AtomAbstractDataProcessor(AbstractDataProcessor):
         self.dq = "quadrupole" if self.is_quad else "dipole"
         self.dq_tag = self.dq[0].upper()
         self.patterns = patterns or ["dyall", "ANO-RCC", "faegri"]
+        if field_threshold is None:
+            self.threshold = 0.002 if self.element.group in [1] else 0.005
+        else:
+            self.threshold = field_threshold
 
         super().__init__()
 
     def load_data(self):
         """Load data using pydirac API."""
-        return self.clean_data(get_polarizability(self.dirname, self.patterns, verbos=False))
+        data = get_polarizability(
+            self.dirname, self.patterns, verbos=False, threshold=self.threshold
+        )
+        return self.clean_data(data)
 
     def check_best(self, calc_type):
         """Whether a calculation uses the most expensive parameters.

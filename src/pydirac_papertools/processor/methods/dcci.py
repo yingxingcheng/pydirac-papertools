@@ -283,6 +283,8 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
                         d["State"] = state
                         d["CISD"] = outs[i]
                 d["Tag"] = tags[ct] if ct in tags else 0
+                if field > self.threshold:
+                    continue
                 data_list.append(d)
         df = pd.DataFrame(data_list)
         df.set_index("calc_type", inplace=True)

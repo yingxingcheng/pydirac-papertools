@@ -31,12 +31,16 @@ class SRCCDataProcessor(AtomAbstractDataProcessor):
         for p in Path(self.dirname).glob(f"{self.SUBDIR_PREFIX}*"):
             if p.is_dir() and p.name == f"{self.SUBDIR_PREFIX}0":
                 p0, p0_error, e0 = self.clean_data(
-                    get_polarizability(str(p), self.patterns, verbos=False)
+                    get_polarizability(
+                        str(p), self.patterns, verbos=False, threshold=self.threshold
+                    )
                 )
                 energy["ml0"] = e0
             elif p.is_dir() and p.name == f"{self.SUBDIR_PREFIX}1":
                 p1, p1_error, e1 = self.clean_data(
-                    get_polarizability(str(p), self.patterns, verbos=False)
+                    get_polarizability(
+                        str(p), self.patterns, verbos=False, threshold=self.threshold
+                    )
                 )
                 energy["ml1"] = e1
 
@@ -214,6 +218,8 @@ class SRCCDataProcessor(AtomAbstractDataProcessor):
                     d["Tag"] = tags[ct] if ct in tags else 0
                     for method, outs in energies.items():
                         d[method.strip("_e").upper()] = outs[i]
+                    if field > self.threshold:
+                        continue
                     data_list.append(d)
         df = pd.DataFrame(data_list)
         df.set_index("calc_type", inplace=True)
