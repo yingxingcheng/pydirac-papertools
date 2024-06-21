@@ -79,6 +79,7 @@ class GroupDataProcessor(AbstractDataProcessor):
         dfs = []
         for k in self.OPTION_KEYS_FOR_SAVE:
             db = getattr(self, k)
+            # TODO: here field is not passed
             dfs.append(db.to_dataframe(data_type=data_type))
         df_tot = pd.concat(dfs)
         return df_tot

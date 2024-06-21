@@ -335,14 +335,14 @@ class Tabulator:
         if add_derived_prop:
             # add derived properties
             caption = (
-                r"Static dipole polarizabilities with non-relativistic (NR), "
+                r"Static dipole polarizabilities (in a.u.) with non-relativistic (NR), "
                 r"scalar-relativistic (SR), full Dirac-Coulomb (DC) relativistic effects "
                 r"of group-{} atoms, as well as their derived properties "
                 r"that are defined in Sec. \ref{{sec:deriv_value}}".format(self.group)
             )
         else:
             caption = (
-                r"Static dipole polarizabilities with non-relativistic (NR), "
+                r"Static dipole polarizabilities (in a.u.) with non-relativistic (NR), "
                 r"scalar-relativistic (SR), full Dirac-Coulomb (DC) relativistic effects "
                 r"of Group {} elements.".format(self.group)
             )
