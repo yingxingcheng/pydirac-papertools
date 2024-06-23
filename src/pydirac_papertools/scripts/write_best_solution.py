@@ -308,7 +308,7 @@ best_dict = {
         "Cd": ["D-2C-DC-CC@s-aug-dyall.cv4z@(core 30)[vir 344]"],
         "Hg": ["D-2C-DC-CC@s-aug-dyall.cv4z@(core 44)[vir 362]"],
         "Cn": ["D-2C-DC-CC@s-aug-dyall.cv4z@(core 48)[vir 434]"],
-        "Al": ["D-4C-DC-CC@dyall.acv4z@(core 13)[vir 363]"],
+        "Al": ["D-4C-DC-CC@dyall.acv4z@(core 11)[vir 223]"],
         "Ga": ["D-4C-DC-CC@dyall.acv4z@(core 13)[vir 203]"],
         "In": ["D-2C-DC-CC@dyall.acv4z@(core 31)[vir 309]"],
         "Tl": ["D-4C-DC-CC@dyall.acv4z@(core 35)[vir 309]"],
