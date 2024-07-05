@@ -89,8 +89,11 @@ class Tabulator:
         # ----------------------
         # this corresponds the best MRCI specified in best_solution.json.
         if group in [13, 15, 16, 17]:
-            for entity in self.data["gs_ci_so"]:
-                sym_root_lis, state_terms = get_sym_root(group)
+            for iatom, entity in enumerate(self.data["gs_ci_so"]):
+                if group == 16 and self.atom_list[iatom] == "Lv":
+                    sym_root_lis, state_terms = get_sym_root(group, is_Lv=True)
+                else:
+                    sym_root_lis, state_terms = get_sym_root(group)
                 for sym_root, st in zip(sym_root_lis, state_terms):
                     index = f"DC@${st}$@MRCISD"
                     if index not in new_data:

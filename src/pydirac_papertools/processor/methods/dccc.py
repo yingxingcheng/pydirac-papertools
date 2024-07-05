@@ -77,7 +77,7 @@ class DCCCDataProcessor(AtomAbstractDataProcessor):
                     param_dict[f"pe_{m}"] = calc_pe(v[m][pos], v[ref_method][pos], precision)
             body_lis.append(body_tmpl.format(**param_dict))
 
-        body_tex = "\n".join(body_lis)
+        body_tex = "".join(body_lis)
         return body_tex
 
     def find_best(self):

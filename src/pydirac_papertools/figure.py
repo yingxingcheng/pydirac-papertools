@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 import importlib
-import os.path
 import warnings
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mticker
 import numpy as np
 
+__all__ = ["Ploter", "red", "blue"]
 data_root = importlib.resources.files("pydirac_papertools.data")
 
 plt.style.use(str(data_root / "plot_style.txt"))
@@ -41,7 +40,7 @@ class Ploter:
         self.ax3 = plt.subplot2grid((1, 3), (0, 2))
         self.axs = [self.ax1, self.ax2, self.ax3]
 
-    def plot(self):
+    def plot(self, *args, **kwargs):
         """Main plot entry."""
         # self.set_tick()
         self.set_locator_size()
@@ -57,7 +56,7 @@ class Ploter:
         plt.savefig(self.fname, bbox_inches="tight")
         # plt.show()
 
-    def plot_polarizability(self):
+    def plot_polarizability(self, *args, **kwargs):
         """NR-, SR-, DC-polarizabilities"""
         if self.group in [13, 14, 16, 17]:
             # plot for Ml0 and Ml1 of alpha_0
@@ -84,11 +83,11 @@ class Ploter:
         self.set_xylabel(self.ax1)
         self.set_legend(self.ax1, 1)
 
-    def plot_correlation_contribution(self):
+    def plot_correlation_contribution(self, *args, **kwargs):
         """Electron-correlation contribution"""
         self.ax3.plot(self.atom_list, self.data["corr_0"], "-D", color=red, label=r"NR")
         self.ax3.plot(self.atom_list, self.data["corr_1"], "-s", color=blue, label=r"SR")
-        if not self.group in [15, 16, 17]:
+        if self.group not in [15, 16, 17]:
             self.ax3.plot(self.atom_list, self.data["corr_2"], "--o", **self.dc_data_style_dict)
         else:
             pass
@@ -107,7 +106,7 @@ class Ploter:
         self.ax3.set_ylabel(r"$\Delta \alpha_c$ [a.u.]")
         self.set_legend(self.ax3, 3)
 
-    def plot_tot_rel(self):
+    def plot_tot_rel(self, *args, **kwargs):
         """Relativistic contribution"""
         # atom_Z_list = [Element(e).Z for e in self.atom_list]
         atom_Z_list = self.atom_list
@@ -202,7 +201,7 @@ class Ploter:
             major_size = [15, 4, 0.5, 4]
         else:
             major_size = [50] * ax_nb
-        minor_size = np.asarray(major_size) / 5
+        # minor_size = np.asarray(major_size) / 5
 
         for i, ax in enumerate(self.axs):
             ax.yaxis.set_major_locator(mpl.ticker.MultipleLocator(major_size[i]))

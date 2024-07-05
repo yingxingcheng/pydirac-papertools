@@ -85,7 +85,14 @@ def get_reference_values(group):
     elif group == 12:
         ref = [r"38.67\pm0.3", r"46\pm2", r"33.91\pm0.34", r"28\pm2"]
     elif group == 13:
-        ref = [r"20.5\pm1", r"57.8\pm1.0", r"50.3\pm3", r"65\pm4", r"50.0\pm2", r"29.2\pm2"]
+        ref = [
+            r"20.5\pm1",
+            r"57.8\pm1.0",
+            r"50.3\pm3",
+            r"65\pm4",
+            r"50.0\pm2",
+            r"29.2\pm2",
+        ]
     elif group == 14:
         ref = [
             r"11.3\pm0.2",
@@ -98,7 +105,14 @@ def get_reference_values(group):
     elif group == 15:
         ref = [r"7.4\pm0.2", r"25.0\pm1", r"30\pm1", r"43\pm2", r"48\pm4", r"71.0\pm20"]
     elif group == 16:
-        ref = [r"5.3\pm0.2", r"19.4\pm0.1", r"28.9\pm1.0", r"38.0\pm4", r"44.0\pm4", "--"]
+        ref = [
+            r"5.3\pm0.2",
+            r"19.4\pm0.1",
+            r"28.9\pm1.0",
+            r"38.0\pm4",
+            r"44.0\pm4",
+            "--",
+        ]
     elif group == 17:
         ref = [
             r"3.74\pm0.08",
@@ -124,8 +138,17 @@ def get_reference_values(group):
     return [f"${i}$" for i in ref]
 
 
-def get_sym_root(group):
+def get_sym_root(group, is_Lv=False):
     """Get atomic terms for `group` elements."""
+    if is_Lv:
+        sym_root_lis = ["sym_1_root_3", "sym_1_root_1", "sym_2_root_1"]
+        terms = [
+            get_gs_term(group) + ", M_J=0",
+            get_gs_term(group) + ", M_J=1",
+            get_gs_term(group) + ", M_J=2",
+        ]
+        return sym_root_lis, terms
+
     if group in [1, 2, 11, 12, 18]:
         syms = (3,) if group % 2 else (1,)
         nb_roots = (1,)

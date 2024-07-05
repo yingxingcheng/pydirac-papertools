@@ -45,16 +45,25 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
                 ct = rf"\textbf{{{ct}}}"
 
             errors = polar_error[k]
-            gs = self.get_gs(v, precision)
-            scf = self.get_scf(v, precision)
+            gs = self.get_gs(v)
+            scf = self.get_scf(v)
             gs_error = self.get_gs_error(errors, precision, return_tex=True)
             scf_error = self.get_scf_error(errors, precision, return_tex=True)
             if gp in [1, 2, 11, 12, 18]:
                 pe_scf = (scf - gs) / gs * 100
-                param_dict = {"gs": gs, "calc_type": ct, "scf": scf, "pe_scf": pe_scf}
+                param_dict = {
+                    "gs": round(gs, precision),
+                    "calc_type": ct,
+                    "scf": round(scf, precision),
+                    "pe_scf": round(pe_scf, precision),
+                }
             else:
                 # DHF of DC-CI for p-block elements is computed from average-of-state method.
-                param_dict = {"gs": gs, "calc_type": ct, "scf": scf}
+                param_dict = {
+                    "gs": round(gs, precision),
+                    "calc_type": ct,
+                    "scf": round(scf, precision),
+                }
             param_dict.update({"gs_error": gs_error, "scf_error": scf_error})
 
             if gp in [1, 2, 11, 12, 14, 18]:
@@ -62,19 +71,23 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
                 pass
             elif gp in [13, 14, 15, 16, 17]:
                 param_dict.update(self.get_extra_states(v, precision))
-                extra_states_error = self.get_extra_states_error(errors, precision)
+                # without losing precision.
+                _extra_states = self.get_extra_states(v)
+                extra_states_error = self.get_extra_states_error(errors, precision, return_tex=True)
                 tmp_dict = {f"{k}_error": v for k, v in extra_states_error.items()}
                 param_dict.update(tmp_dict)
                 if gp in [13]:
-                    param_dict["diff"] = param_dict["P_3/2"] - param_dict["gs"]
+                    # param_dict["diff"] = param_dict["P_3/2"] - param_dict["gs"]
+                    param_dict["diff"] = round(_extra_states["P_3/2"] - gs, precision)
                 elif gp in [17]:
-                    param_dict["diff"] = param_dict["gs"] - param_dict["P_1/2_1/2"]
+                    # param_dict["diff"] = param_dict["gs"] - param_dict["P_1/2_1/2"]
+                    param_dict["diff"] = round(gs - _extra_states["P_1/2_1/2"], precision)
             else:
                 raise RuntimeError(f"Not support group {gp}")
             body_tex = body.format(**param_dict)
             body_lis.append(body_tex)
 
-        body_tex = "\n".join(body_lis)
+        body_tex = "".join(body_lis)
         return body_tex
 
     def get_scf(self, entity, precision=None):
@@ -174,11 +187,18 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
                 "P_3/2_3/2": entity["sym_3_root_2"][pos],
             }
         elif gp in [16]:
-            d = {
-                "P_2_0": entity["sym_1_root_1"][pos],
-                "P_2_1": np.average([entity["sym_1_root_2"][pos], entity["sym_1_root_3"][pos]]),
-                "P_2_2": np.average([entity["sym_2_root_1"][pos], entity["sym_2_root_2"][pos]]),
-            }
+            if self.element.symbol == "Lv":
+                d = {
+                    "P_2_0": entity["sym_1_root_3"][pos],
+                    "P_2_1": np.average([entity["sym_1_root_1"][pos], entity["sym_1_root_2"][pos]]),
+                    "P_2_2": np.average([entity["sym_2_root_1"][pos], entity["sym_2_root_2"][pos]]),
+                }
+            else:
+                d = {
+                    "P_2_0": entity["sym_1_root_1"][pos],
+                    "P_2_1": np.average([entity["sym_1_root_2"][pos], entity["sym_1_root_3"][pos]]),
+                    "P_2_2": np.average([entity["sym_2_root_1"][pos], entity["sym_2_root_2"][pos]]),
+                }
         elif gp in [17]:
             d = {
                 "P_3/2_3/2": entity["sym_3_root_1"][pos],
@@ -212,15 +232,30 @@ class DCCIDataProcessor(AtomAbstractDataProcessor):
                 "P_3/2_3/2": entity["sym_3_root_2"][pos],
             }
         elif gp in [16]:
-            d = {
-                "P_2_0": entity["sym_1_root_1"][pos],
-                "P_2_1": np.sqrt(
-                    0.5 * entity["sym_1_root_2"][pos] ** 2 + 0.5 * entity["sym_1_root_3"][pos] ** 2
-                ),
-                "P_2_2": np.sqrt(
-                    0.5 * entity["sym_2_root_1"][pos] ** 2 + 0.5 * entity["sym_2_root_2"][pos] ** 2
-                ),
-            }
+            if self.element.symbol == "Lv":
+                d = {
+                    "P_2_0": entity["sym_1_root_3"][pos],
+                    "P_2_1": np.sqrt(
+                        0.5 * entity["sym_1_root_1"][pos] ** 2
+                        + 0.5 * entity["sym_1_root_2"][pos] ** 2
+                    ),
+                    "P_2_2": np.sqrt(
+                        0.5 * entity["sym_2_root_1"][pos] ** 2
+                        + 0.5 * entity["sym_2_root_2"][pos] ** 2
+                    ),
+                }
+            else:
+                d = {
+                    "P_2_0": entity["sym_1_root_1"][pos],
+                    "P_2_1": np.sqrt(
+                        0.5 * entity["sym_1_root_2"][pos] ** 2
+                        + 0.5 * entity["sym_1_root_3"][pos] ** 2
+                    ),
+                    "P_2_2": np.sqrt(
+                        0.5 * entity["sym_2_root_1"][pos] ** 2
+                        + 0.5 * entity["sym_2_root_2"][pos] ** 2
+                    ),
+                }
         elif gp in [17]:
             d = {
                 "P_3/2_3/2": entity["sym_3_root_1"][pos],
